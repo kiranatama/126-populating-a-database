@@ -1,0 +1,5 @@
+tmp/*
+log/*
+*.sqlite3
+config/development.sphinx.conf
+db/sphinx
