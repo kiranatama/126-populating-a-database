@@ -27,6 +27,8 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "populator", :version => "0.2.5"
   config.gem "faker", :version => "0.3.1"
+  config.gem "thinking-sphinx", :version => "1.4.6"
+  config.gem "riddle", :version => "1.3.3"
 
   # Only load the plugins named here, in the order given. By default, all plugins
   # in vendor/plugins are loaded in alphabetical order.

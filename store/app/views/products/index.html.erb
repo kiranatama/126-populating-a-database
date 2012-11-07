@@ -1,5 +1,12 @@
 <% title "Recent Products" %>
 
+<% form_tag products_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
 <% for product in @products %>
   <div class="product">
     <h3>

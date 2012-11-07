@@ -1,16 +1,19 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all(:limit => 10, :order => 'created_at DESC')
+    @products = Product.search params[:search],
+      :limit => 10,
+      :order => 'created_at',
+      :sort_mode => :desc
   end
-  
+
   def show
     @product = Product.find(params[:id])
   end
-  
+
   def new
     @product = Product.new
   end
-  
+
   def create
     @product = Product.new(params[:product])
     if @product.save
@@ -20,11 +23,11 @@ class ProductsController < ApplicationController
       render :action => 'new'
     end
   end
-  
+
   def edit
     @product = Product.find(params[:id])
   end
-  
+
   def update
     @product = Product.find(params[:id])
     if @product.update_attributes(params[:product])
@@ -34,7 +37,7 @@ class ProductsController < ApplicationController
       render :action => 'edit'
     end
   end
-  
+
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
